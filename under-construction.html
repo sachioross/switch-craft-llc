@@ -1,0 +1,62 @@
+
+<!-- Script that was manually entered into Sarah's site to help with her basic under construction notice -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    
+        const setDocumenStyle = () => {
+            const styleTag = document.createElement('style');
+            styleTag.textContent = `
+            body {
+                height: 100%;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: Arial, sans-serif;
+            }
+            `
+            document.head.appendChild(styleTag);
+        }
+    
+        const buildUnderConstructionPage = () => {
+    
+            document.body.innerHTML = "";
+    
+            // Create main container div
+            const constructionContainer = document.createElement('div');
+            constructionContainer.className = 'construction-container';
+    
+            // Create logo placeholder
+            const logoPh = document.createElement('div');
+            logoPh.className = 'construction-container--logo-placeholder';
+            const img = document.createElement('img');
+            img.src = 'https://switchcraftllc.com/sitepad-data/uploads/2024/11/Switch_Craft_LLC_Logo.jpg';
+            logoPh.appendChild(img);
+            constructionContainer.appendChild(logoPh);
+    
+            // Create heading
+            const heading = document.createElement('h2');
+            heading.textContent = 'Under Construction';
+            constructionContainer.appendChild(heading);
+    
+            // Create contact paragraph
+            const contactInfo = document.createElement('p');
+            contactInfo.innerHTML = 'Contact us: <br>email@example.com<br>+1 (555) 123-4567';
+            constructionContainer.appendChild(contactInfo);
+    
+            // Add container to body
+            document.body.appendChild(constructionContainer);
+            setDocumenStyle();
+    
+            return true;
+        };
+    
+        let underConstruction = false;
+        underConstruction = buildUnderConstructionPage();
+    
+        if (!underConstruction) {
+            document.body.style.display = 'block';
+        }    
+        
+    });
+    </script>
